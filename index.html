@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vrinda Nair - Research Scientist in Computational Biophysics & Drug Design">
+    <title>Vrinda Nair</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --primary-light: #dbeafe;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --border: #e2e8f0;
+            --accent: #06b6d4;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            color: var(--text-dark);
+            background: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.3rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-avatar {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            letter-spacing: -0.02em;
+        }
+
+        .hero .title {
+            font-size: 1.4rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .hero .location {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .hero .bio {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            max-width: 750px;
+            margin: 0 auto 2rem;
+            text-align: left;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(37, 99, 235, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-light);
+        }
+
+        /* Profile Cards Section */
+        .profiles-section {
+            max-width: 900px;
+            margin: 4rem auto 0;
+            padding: 0 2rem;
+        }
+
+        .profiles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+            max-width: 900px;
+        }
+
+        .profile-card {
+            background: var(--bg-white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+            cursor: pointer;
+        }
+
+        .profile-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 12px 24px rgba(37, 99, 235, 0.1);
+            transform: translateY(-6px);
+        }
+
+        .profile-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .profile-desc {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            background: var(--bg-white);
+            margin: 3rem 0;
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        section h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 2.5rem;
+            color: var(--text-dark);
+            letter-spacing: -0.01em;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        section h2::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+        }
+
+        .role-title {
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .company {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .description {
+            color: var(--text-muted);
+            margin-top: 0.8rem;
+            line-height: 1.7;
+        }
+
+        /* Education & Experience */
+        .edu-item, .exp-item {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .edu-item:last-child, .exp-item:last-child {
+            border-bottom: none;
+        }
+
+        .gpa {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .thesis {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        /* Awards Grid */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .award-item {
+            background: linear-gradient(135deg, #dbeafe 0%, #cffafe 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .award-title {
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .award-year {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Publications */
+        .publication {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .publication:last-child {
+            border-bottom: none;
+        }
+
+        .pub-title {
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .pub-meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .pub-link {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .pub-link:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white !important;
+            text-align: center;
+            border: none !important;
+        }
+
+        .contact-section h2 {
+            color: white;
+        }
+
+        .contact-section h2::before {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .contact-section .description {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .btn-contact {
+            background: white;
+            color: var(--primary);
+            margin-top: 1.5rem;
+        }
+
+        .btn-contact:hover {
+            background: var(--bg-light);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                padding: 4rem 2rem;
+                margin-top: 70px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .bio {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 2rem 1.5rem;
+                margin: 2rem 0;
+            }
+
+            .awards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Smooth Transitions */
+        a, button {
+            cursor: pointer;
+        }
+
+        /* Scroll to top indicator */
+        @media (prefers-reduced-motion: no-preference) {
+            html {
+                scroll-behavior: smooth;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">VN</div>
+            <ul class="nav-links">
+                <li><a href="#profile" class="nav-link active">Profile</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#publications" class="nav-link">Publications</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="profile">
+        <div class="hero-content">
+            <div class="hero-avatar">🧬</div>
+            <h1>Vrinda Nair</h1>
+            <p class="title">Research Scientist | Computational Biophysics & Drug Design</p>
+            <p class="location">📍 Montreal, Canada</p>
+            
+            <p class="bio">
+                Research scientist specialised in computational biophysics with a focus on drug design and a biotechnology engineer, with 8+ years of progressive research experience spanning molecular biology, genetics, cancer biology, molecular docking, molecular dynamics simulations, and machine learning for antibiotic discovery and protein foundation model AI safety. Proven ability to bridge computational innovation and wet-lab expertise through industry-academic collaborations. Demonstrated expertise in RNA-targeting small-molecule design, AI/ML applications in drug discovery, and research translation. Track record of securing $100,000+ in research funding, publishing peer-reviewed articles and book chapters, and presenting at international conferences. Adaptable scientist equipped to contribute to research, development, and translational roles across biotech, pharma, diagnostics, and healthcare innovation.
+            </p>
+
+            <div class="cta-buttons">
+                <a href="mailto:vrinda.vn.nair@gmail.com" class="btn btn-primary">📧 Get in Touch</a>
+                <a href="https://ca.linkedin.com/in/vrinda-nair-074947100" target="_blank" class="btn btn-secondary">💼 LinkedIn</a>
+            </div>
+
+            <!-- Profile Links -->
+            <div class="profiles-section">
+                <div class="profiles-grid">
+                    <a href="https://ca.linkedin.com/in/vrinda-nair-074947100" target="_blank" class="profile-card">
+                        <div class="profile-icon">💼</div>
+                        <div class="profile-name">LinkedIn</div>
+                        <div class="profile-desc">Professional Profile</div>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" class="profile-card">
+                        <div class="profile-icon">📚</div>
+                        <div class="profile-name">Google Scholar</div>
+                        <div class="profile-desc">Publications</div>
+                    </a>
+                    <a href="https://orcid.org/YOUR_ID" target="_blank" class="profile-card">
+                        <div class="profile-icon">🔬</div>
+                        <div class="profile-name">ORCID</div>
+                        <div class="profile-desc">Researcher ID</div>
+                    </a>
+                    <a href="https://github.com/YOUR_USERNAME" target="_blank" class="profile-card">
+                        <div class="profile-icon">💻</div>
+                        <div class="profile-name">GitHub</div>
+                        <div class="profile-desc">Code & Projects</div>
+                    </a>
+                    <a href="https://twitter.com/YOUR_HANDLE" target="_blank" class="profile-card">
+                        <div class="profile-icon">𝕏</div>
+                        <div class="profile-name">Twitter/X</div>
+                        <div class="profile-desc">Updates & Discussions</div>
+                    </a>
+                    <a href="https://YOUR_SUBSTACK.substack.com" target="_blank" class="profile-card">
+                        <div class="profile-icon">📝</div>
+                        <div class="profile-name">Substack</div>
+                        <div class="profile-desc">Newsletter</div>
+                    </a>
+                    <a href="https://yourblog.com" target="_blank" class="profile-card">
+                        <div class="profile-icon">✍️</div>
+                        <div class="profile-name">Blog</div>
+                        <div class="profile-desc">Personal Thoughts</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Education -->
+        <section>
+            <h2>Education</h2>
+            
+            <div class="edu-item">
+                <p class="role-title">Master of Science in Physics</p>
+                <p class="company">Concordia University • Montreal, Canada</p>
+                <p class="meta">January 2021 – June 2026</p>
+                <p class="gpa">GPA: 3.78/4.0</p>
+                <p class="thesis"><strong>Dissertation:</strong> Conformational and molecular interactions of small molecules targeting the SAM-I riboswitch</p>
+                <p class="description">Projects funded by NSERC, CRC, Mitacs, and Concordia University.</p>
+            </div>
+
+            <div class="edu-item">
+                <p class="role-title">Master of Technology in Biotechnology</p>
+                <p class="company">Amity University • Mumbai, India</p>
+                <p class="meta">August 2015 – June 2017</p>
+                <p class="gpa">CGPA: 8.0/10 • Institute Topper</p>
+                <p class="thesis"><strong>Dissertation:</strong> ACE gene polymorphism evaluation in metabolic disorders</p>
+            </div>
+
+            <div class="edu-item">
+                <p class="role-title">Bachelor of Technology in Biotechnology</p>
+                <p class="company">D Y Patil University • Navi Mumbai, India</p>
+                <p class="meta">July 2011 – June 2015</p>
+                <p class="gpa">First Class (176 credits)</p>
+                <p class="thesis"><strong>Dissertation:</strong> Lycopene extraction and isolation for bioplastic colouring</p>
+            </div>
+
+            <div class="edu-item">
+                <p class="role-title">Post Graduate Diploma in Instructional Design</p>
+                <p class="company">Symbiosis Centre for Distance Learning • Pune, India</p>
+                <p class="meta">May 2015 – July 2016</p>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience">
+            <h2>Experience</h2>
+
+            <div class="exp-item">
+                <p class="role-title">Partnerships & Growth Coordinator</p>
+                <p class="company">MaternaSense • Montreal, Canada</p>
+                <p class="meta">June 2026 – Present</p>
+                <p class="description">Supporting stakeholder outreach and partnership development for maternal healthcare innovation. Conducting customer discovery research, evaluating grants and funding opportunities, and coordinating networking events.</p>
+            </div>
+
+            <div class="exp-item">
+                <p class="role-title">PRISM Research Fellow (AI Safety)</p>
+                <p class="company">Women Who Do Data (W2D2) • Remote</p>
+                <p class="meta">June 2026 – Present</p>
+                <p class="description">Developing ML pipelines for evaluating adversarial robustness of ESM-2 protein foundation models. Creating open-source evaluation toolkit and co-authoring papers for NeurIPS workshops on protein foundation model safety.</p>
+            </div>
+
+            <div class="exp-item">
+                <p class="role-title">Graduate Research Assistant</p>
+                <p class="company">Concordia University • Montreal, Canada</p>
+                <p class="meta">January 2021 – August 2026</p>
+                <p class="description">Investigated small-molecule interactions with riboswitch RNAs using molecular docking, MD simulations, and machine learning. Developed ML pipelines for RNA-targeting small-molecule antibiotic design.</p>
+            </div>
+
+            <div class="exp-item">
+                <p class="role-title">STEM Outreach Site Coordinator</p>
+                <p class="company">Let's Talk Science at Concordia University • Montreal</p>
+                <p class="meta">May 2024 – June 2026</p>
+                <p class="description">Managed volunteers, built educator partnerships, and oversaw site budget. Led 28+ STEM outreach events reaching 2,000+ youths. Developed STEM Stories Kit and launched Volunteer Mentorship Program.</p>
+            </div>
+
+            <div class="exp-item">
+                <p class="role-title">Mitacs Accelerate Intern</p>
+                <p class="company">Molecular Forecaster (MFI) • Montreal</p>
+                <p class="meta">August 2022 – August 2023</p>
+                <p class="description">Developed ML approaches for designing RNA-targeting small-molecule antibiotics. Received $30,000 Mitacs Accelerate fellowship with additional funding from MFI.</p>
+            </div>
+
+            <div class="exp-item">
+                <p class="role-title">Graduate Teaching Assistant</p>
+                <p class="company">Concordia University • Montreal</p>
+                <p class="meta">January 2021 – April 2025</p>
+                <p class="description">Taught content, supervised laboratory work, and assessed students for Physics courses (260, 226, 224, 230, 205, 206).</p>
+            </div>
+        </section>
+
+        <!-- Awards -->
+        <section>
+            <h2>Honours & Awards</h2>
+            <div class="awards-grid">
+                <div class="award-item">
+                    <div class="award-title">FORCES Avenir Finalist</div>
+                    <div class="award-year">Graduate Personality Category • 2026</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-title">Mitacs Accelerate Fellowship</div>
+                    <div class="award-year">$30,000 • 2022</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-title">PROTEO Science Blog Competition</div>
+                    <div class="award-year">Third Prize • 2025</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-title">Let's Talk Science Scholarship</div>
+                    <div class="award-year">$12,090 • 2024 & 2025</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-title">EFFERVESCENCE 2024</div>
+                    <div class="award-year">Second Prize Research Pitch • 2024</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-title">Concordia International Tuition Award</div>
+                    <div class="award-year">$40,656 • 2020</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-title">St. Gallen Symposium</div>
+                    <div class="award-year">Leader of Tomorrow • Switzerland 2022</div>
+                </div>
+                <div class="award-item">
+                    <div class="award-title">Concordia Public Scholar Award</div>
+                    <div class="award-year">$10,000 • 2022</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section id="publications">
+            <h2>Publications & Media</h2>
+
+            <div class="publication">
+                <p class="pub-title">Conformational and molecular interactions of small molecules targeting the SAM-I riboswitch</p>
+                <p class="pub-meta">Nair, V., Hamidabad, M. N., Erol, D., & Mansbach, R. (2026) • bioRxiv • Manuscript in preparation</p>
+            </div>
+
+            <div class="publication">
+                <p class="pub-title">Exploring the therapeutic potential of Mirror RNA through chirality</p>
+                <p class="pub-meta">Vrinda Nair, Gabriela Manova (2026) • Manuscript in preparation</p>
+            </div>
+
+            <div class="publication">
+                <p class="pub-title">Proteins as biomarkers: The heroes behind the scenes of diagnosis and treatment</p>
+                <p class="pub-meta">Nair, V. (2025) • PROTEO</p>
+                <a href="https://proteo.ca/en/proteins-as-biomarkers-the-heroes-behind-the-scenes-of-diagnosis-and-treatment/" target="_blank" class="pub-link">Read Article →</a>
+            </div>
+
+            <div class="publication">
+                <p class="pub-title">The fight against antibiotic resistance is growing more urgent, but artificial intelligence can help</p>
+                <p class="pub-meta">Vrinda Nair, Rachael Mansbach • The Conversation Canada (2023)</p>
+            </div>
+
+            <div class="publication">
+                <p class="pub-title">Opinion: Discovering new antibiotics with help from AI</p>
+                <p class="pub-meta">Nair, V. (2022) • Montreal Gazette</p>
+                <a href="https://montrealgazette.com/opinion/opinion-discovering-new-antibiotics-with-help-from-ai/" target="_blank" class="pub-link">Read Article →</a>
+            </div>
+
+            <div class="publication">
+                <p class="pub-title">STEM Women's Career Challenges and Possible Solutions</p>
+                <p class="pub-meta">Aggarwal, S., Kumari, B., Subrahmaniam, H. J., Rajendran, S., Swaroop, A., & Nair, V. (2022) • CRC Press</p>
+            </div>
+
+            <div class="publication">
+                <p class="pub-title">Extraction and isolation of lycopene for bioplastic colouring</p>
+                <p class="pub-meta">Nair, V., and S. Lilwani (2016) • International Journal of Scientific and Technology Research, 5(5), 235-238</p>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section>
+            <h2>Skills & Affiliations</h2>
+
+            <h3>Professional Affiliations</h3>
+            <p class="description">Canadian Society for Chemistry (2024-2026) • PROTEO (2022-2026) • Biophysical Society of Canada (2021-2026) • Canadian Association of Physicists (2021-2022)</p>
+
+            <h3>Languages</h3>
+            <p class="description">English (C1 - Professional) • Hindi (Professional) • Marathi (Professional) • Malayalam (Native)</p>
+
+            <h3>Certifications</h3>
+            <p class="description">Pharmacology: HMX Fundamentals (Harvard Medical School, 2022) • Physics of Diagnostic Radiology (McGill University, 2022) • Programming Diploma: C, C++, Java, Linux Administration</p>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact-section">
+            <h2>Let's Connect</h2>
+            <p class="description">Interested in collaboration, mentoring opportunities, or discussing research?</p>
+            <a href="mailto:vrinda.vn.nair@gmail.com" class="btn btn-contact">📧 Send me an email</a>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Vrinda Nair. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Navigation highlighting
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const sections = document.querySelectorAll('section');
+
+        window.addEventListener('scroll', () => {
+            let currentSection = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 200) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll for navigation
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').slice(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
