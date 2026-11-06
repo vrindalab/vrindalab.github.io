@@ -161,18 +161,12 @@
         .roles li:nth-child(even) { color: var(--teal); background: var(--teal-soft); }
         .location { color: var(--muted); font-size: 0.95rem; margin-bottom: 1.6rem; }
 
-        /* Replace the monogram with a photo: <img class="avatar" src="photo.jpg" alt="Vrinda Nair"> */
         .avatar {
             width: 168px;
             height: 168px;
             border-radius: 50%;
-            display: grid;
-            place-items: center;
-            background: linear-gradient(140deg, var(--primary) 0%, var(--teal) 100%);
-            color: #fff;
-            font-family: var(--font-display);
-            font-size: 3.6rem;
-            font-weight: 700;
+            background: #ffffff;
+            border: 1px solid var(--line);
             object-fit: cover;
         }
 
@@ -303,7 +297,7 @@
         @media (max-width: 760px) {
             .hero { padding: 3rem 0 2.5rem; }
             .hero-grid { grid-template-columns: 1fr; gap: 1.8rem; }
-            .avatar { order: -1; width: 112px; height: 112px; font-size: 2.4rem; }
+            .avatar { order: -1; width: 112px; height: 112px; }
             .row { grid-template-columns: 1fr; gap: 0.2rem; }
             .when { order: -1; }
             .plain-list li { grid-template-columns: 1fr; gap: 0.2rem; }
@@ -352,7 +346,7 @@
                         <a href="https://vrindabn.wordpress.com" target="_blank" rel="noopener noreferrer">Blog</a>
                     </div>
                 </div>
-                <div class="avatar" role="img" aria-label="Vrinda Nair initials">VN</div>
+                <img class="avatar" src="avatar.png" alt="Illustrated portrait of Vrinda Nair" width="168" height="168">
             </div>
         </header>
 
